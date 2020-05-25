@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Churn</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="creditScore" placeholder="CreditScore" required="required" />
+        <input type="text" name="age" placeholder="Age" required="required" />
+		<input type="text" name="tenure" placeholder="Tenure" required="required" />
+		<input type="text" name="balance" placeholder="Balance" required="required" />
+		<input type="text" name="numOfProducts" placeholder="NumOfProducts" required="required" />
+		<input type="text" name="hasCrCard" placeholder="HasCrCard" required="required" />
+		<input type="text" name="isActiveMember" placeholder="IsActiveMember" required="required" />
+		<input type="text" name="estimatedSalary" placeholder="EstimatedSalary" required="required"
+		/>
+		<input type="text" name="geography_Germany" placeholder="Geography_Germany"
+		 required="required" />
+        <input type="text" name="geography_Spain" placeholder="Geography_Spain"
+		 required="required" />
+        <input type="text" name="gender_Male" placeholder="Gender_Male" required="required" />
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
